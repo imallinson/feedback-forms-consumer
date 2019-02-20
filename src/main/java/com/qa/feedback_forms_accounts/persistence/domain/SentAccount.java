@@ -6,7 +6,8 @@ public class SentAccount {
 	private Long accountID;
 	private Long cohortID;
 	private boolean admin;
-	private String userName;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String password;
 	private boolean flagged;
@@ -15,10 +16,11 @@ public class SentAccount {
 		
 	}
 	
-	public SentAccount(Long cohortID, boolean admin, String userName, String email, String password, boolean flagged) {
+	public SentAccount(Long cohortID, boolean admin, String firstName, String lastName, String email, String password, boolean flagged) {
 		this.cohortID = cohortID;
 		this.admin = admin;
-		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.flagged = flagged;
@@ -48,12 +50,20 @@ public class SentAccount {
 		this.admin = admin;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {
