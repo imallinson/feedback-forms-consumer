@@ -4,7 +4,7 @@ public class SentFeedbackForm {
 	
 	private Long feedbackID;
 	private Long cohortID;
-	private Long userID;
+	private Long accountID;
 	private int week;
 	private int score;
 	private String question1;
@@ -16,9 +16,9 @@ public class SentFeedbackForm {
 		
 	}
 	
-	public SentFeedbackForm(Long cohortID, Long userID, int week, int score, String question1, String question2, String question3, String question4) {
+	public SentFeedbackForm(Long cohortID, Long accountID, int week, int score, String question1, String question2, String question3, String question4) {
 		this.cohortID = cohortID;
-		this.userID = userID;
+		this.accountID = accountID;
 		this.week = week;
 		this.score = score;
 		this.question1 = question1;
@@ -43,12 +43,12 @@ public class SentFeedbackForm {
 		this.cohortID = cohortID;
 	}
 
-	public Long getUserID() {
-		return userID;
+	public Long getAccountID() {
+		return accountID;
 	}
 
-	public void setUserID(Long userID) {
-		this.userID = userID;
+	public void setAccountID(Long accountID) {
+		this.accountID = accountID;
 	}
 
 	public int getWeek() {
