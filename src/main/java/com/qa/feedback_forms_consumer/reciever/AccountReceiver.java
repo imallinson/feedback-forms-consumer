@@ -19,7 +19,6 @@ public class AccountReceiver {
 
     @JmsListener(destination = "AccountQueue", containerFactory = "myFactory")
     public void receiveMessage(SentAccount sentAccount) {
-    	
     	sentAccount.setAccountID(staticAccountID);
     	staticAccountID+=1;
         repo.save(sentAccount);
