@@ -14,9 +14,13 @@ public class AccountReceiver {
 	
     @Autowired
     private MongoAccountRepo repo;
+    
+    private static Long staticAccountID = 1L;
 
     @JmsListener(destination = "AccountQueue", containerFactory = "myFactory")
     public void receiveMessage(SentAccount sentAccount) {
+    	sentAccount.setAccountID(staticAccountID);
+    	staticAccountID+=1;
         repo.save(sentAccount);
     }
 
