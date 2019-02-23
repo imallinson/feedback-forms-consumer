@@ -1,7 +1,11 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="Cohort")
 public class SentCohort {
-	
+	@Id
 	private Long cohortId;
 	private String cohortName;
 	private String trainerName;

@@ -1,13 +1,19 @@
 package com.qa.feedback_forms_accounts.persistence.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+
+@Document(collection="Account")
 public class SentAccount {
-	
+	@Id
 	private Long accountID;
 	private Long cohortID;
 	private boolean admin;
 	private String firstName;
 	private String lastName;
+	@Indexed(unique = true)
 	private String email;
 	private String password;
 	private boolean flagged;
