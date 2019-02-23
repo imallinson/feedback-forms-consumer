@@ -1,11 +1,10 @@
 package com.qa.FeedbackFormSubmit.persistence.domain;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="FeedbackForm")
 public class SentFeedbackForm {
-	@Id
+
 	private Long feedbackID;
 	private Long cohortID;
 	private Long accountID;

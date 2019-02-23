@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.qa.feedbackformscohorts.persistence.domain.SentCohort;
 
 @Repository
-public interface MongoCohortRepo extends MongoRepository<SentCohort, Long>{
+public interface MongoCohortRepo extends MongoRepository<SentCohort, String>{
 
 }

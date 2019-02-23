@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.qa.FeedbackFormSubmit.persistence.domain.SentFeedbackForm;
 
 @Repository
-public interface MongoFeedbackFormRepo extends MongoRepository<SentFeedbackForm, Long> {
+public interface MongoFeedbackFormRepo extends MongoRepository<SentFeedbackForm, String> {
 
 }
