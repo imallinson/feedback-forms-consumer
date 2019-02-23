@@ -1,8 +1,6 @@
 package com.qa.FeedbackFormSubmit.persistence.domain;
 
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="FeedbackForm")
 public class SentFeedbackForm {
 
 	private Long feedbackID;

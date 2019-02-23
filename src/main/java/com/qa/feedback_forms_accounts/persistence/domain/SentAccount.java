@@ -4,7 +4,6 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collection="Account")
 public class SentAccount {
 	
 	private Long accountID;
@@ -12,7 +11,6 @@ public class SentAccount {
 	private boolean admin;
 	private String firstName;
 	private String lastName;
-	@Indexed(unique = true)
 	private String email;
 	private String password;
 	private boolean flagged;
