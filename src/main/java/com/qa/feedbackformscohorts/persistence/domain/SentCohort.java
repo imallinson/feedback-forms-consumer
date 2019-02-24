@@ -1,6 +1,8 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class SentCohort {
 	private Long cohortId;
 	private String cohortName;
