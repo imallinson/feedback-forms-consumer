@@ -1,6 +1,5 @@
 package com.qa.feedback_forms_accounts.persistence.domain;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
