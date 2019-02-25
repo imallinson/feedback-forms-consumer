@@ -7,5 +7,8 @@ import com.qa.feedback_forms_accounts.persistence.domain.SentAccount;
 
 @Repository
 public interface MongoAccountRepo  extends MongoRepository<SentAccount, Long>{
+	
+	SentAccount findTopByOrderByAccountIDDesc();
+	
 
 }

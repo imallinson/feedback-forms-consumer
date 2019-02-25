@@ -16,9 +16,12 @@ public class FeedbackFormReceiver {
 
     @JmsListener(destination = "FormQueue", containerFactory = "myFactory")
     public void receiveMessage(SentFeedbackForm sentFeedbackForm) {
-        sentFeedbackForm.setFeedbackID(staticFeedbackFormID);
-        staticFeedbackFormID+=1;
-        repo.save(sentFeedbackForm);
-    }
-
+    	
+		if (repo.count() < 1) {
+			sentFeedbackForm.setFeedbackID(staticFeedbackFormID);
+		} else {
+			sentFeedbackForm.setFeedbackID(repo.findTopByOrderByFeedbackIDDesc().getFeedbackID() + 1);
+		}
+		repo.save(sentFeedbackForm);
+	}
 }

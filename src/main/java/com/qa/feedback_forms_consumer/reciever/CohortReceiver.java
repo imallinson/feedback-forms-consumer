@@ -17,9 +17,13 @@ public class CohortReceiver {
     
     @JmsListener(destination = "CohortQueue", containerFactory = "myFactory")
     public void receiveMessage(SentCohort sentCohort) {
-    	sentCohort.setCohortId(staticCohortID);
-    	staticCohortID+=1;
-        repo.save(sentCohort);
-    }
+    	
+		if (repo.count() < 1) {
+	    	sentCohort.setCohortId(staticCohortID);
+		} else {
+			sentCohort.setCohortId(repo.findTopByOrderByCohortIdDesc().getCohortId() + 1);
+		}
+		repo.save(sentCohort);
+	}
 
 }
