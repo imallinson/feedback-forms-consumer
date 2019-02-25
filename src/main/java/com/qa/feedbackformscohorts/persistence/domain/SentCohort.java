@@ -1,5 +1,8 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class SentCohort {
 	
 	private Long cohortId;
@@ -7,6 +10,8 @@ public class SentCohort {
 	private String trainerName;
 	private int week;
 	private String cohortDescription;
+	private LocalDate createdOn = LocalDate.now();
+	
 
 	public SentCohort() {
 
