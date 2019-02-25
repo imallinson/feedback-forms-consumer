@@ -29,8 +29,8 @@ public class SentCohort {
 		return cohortID;
 	}
 
-	public void setCohortId(Long cohortId) {
-		this.cohortID = cohortId;
+	public void setCohortId(Long cohortID) {
+		this.cohortID = cohortID;
 	}
 
 	public String getCohortName() {

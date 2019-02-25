@@ -9,7 +9,7 @@ import com.qa.feedbackformscohorts.persistence.domain.SentCohort;
 @Repository
 public interface MongoCohortRepo extends MongoRepository<SentCohort, Long>{
 	
-	SentCohort findTopByOrderByCohortIdDesc();
+	SentCohort findTopByOrderByCohortIDDesc();
 
 
 }

@@ -21,7 +21,7 @@ public class CohortReceiver {
 		if (repo.count() < 1) {
 	    	sentCohort.setCohortId(staticCohortID);
 		} else {
-			sentCohort.setCohortId(repo.findTopByOrderByCohortIdDesc().getCohortId() + 1);
+			sentCohort.setCohortId(repo.findTopByOrderByCohortIDDesc().getCohortId() + 1);
 		}
 		repo.save(sentCohort);
 	}
