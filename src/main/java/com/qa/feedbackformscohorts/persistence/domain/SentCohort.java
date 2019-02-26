@@ -1,7 +1,6 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
-import java.sql.Date;
-import java.time.LocalDate;
+import java.sql.Timestamp;
 
 public class SentCohort {
 	
@@ -10,7 +9,7 @@ public class SentCohort {
 	private String trainerName;
 	private int week;
 	private String cohortDescription;
-	private LocalDate createdOn = LocalDate.now();
+	private String createdOn = new Timestamp(System.currentTimeMillis()).toString().substring(0, 10);
 	
 
 	public SentCohort() {

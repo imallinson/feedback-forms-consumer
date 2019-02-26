@@ -9,6 +9,7 @@ import com.qa.feedback_forms_accounts.persistence.domain.SentAccount;
 public interface MongoAccountRepo  extends MongoRepository<SentAccount, Long>{
 	
 	SentAccount findTopByOrderByAccountIDDesc();
+	SentAccount findByEmail(String email);
 	
 
 }
