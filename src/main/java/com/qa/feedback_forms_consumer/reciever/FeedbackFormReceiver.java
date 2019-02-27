@@ -12,13 +12,12 @@ public class FeedbackFormReceiver {
 
     @Autowired
     private MongoFeedbackFormRepo repo;
-    private static Long staticFeedbackFormID = 1L;
 
     @JmsListener(destination = "FormQueue", containerFactory = "myFactory")
     public void receiveMessage(SentFeedbackForm sentFeedbackForm) {
     	
 		if (repo.count() < 1) {
-			sentFeedbackForm.setFeedbackID(staticFeedbackFormID);
+			sentFeedbackForm.setFeedbackID(1L);
 		} else {
 			sentFeedbackForm.setFeedbackID(repo.findTopByOrderByFeedbackIDDesc().getFeedbackID() + 1);
 		}

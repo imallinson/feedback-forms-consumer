@@ -1,7 +1,8 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class SentCohort {
 	
@@ -10,7 +11,7 @@ public class SentCohort {
 	private String trainerName;
 	private int week;
 	private String cohortDescription;
-	private LocalDate createdOn = LocalDate.now();
+	private String createdOn = getCurrentDate();
 	
 
 	public SentCohort() {
@@ -23,6 +24,14 @@ public class SentCohort {
 		this.trainerName = trainerName;
 		this.week = week;
 		this.cohortDescription = cohortDescription;
+	}
+
+	public String getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(String createdOn) {
+		this.createdOn = createdOn;
 	}
 
 	public Long getCohortID() {
@@ -63,6 +72,10 @@ public class SentCohort {
 
 	public void setCohortDescription(String cohortDescription) {
 		this.cohortDescription = cohortDescription;
+	}
+	
+	public String getCurrentDate() {
+		return   LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 	}
 
 }
