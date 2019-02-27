@@ -13,13 +13,11 @@ public class CohortReceiver {
     @Autowired
     private MongoCohortRepo repo;
     
-    private static Long staticCohortID = 1L;
-    
     @JmsListener(destination = "CohortQueue", containerFactory = "myFactory")
     public void receiveMessage(SentCohort sentCohort) {
     	
 		if (repo.count() < 1) {
-	    	sentCohort.setCohortID(staticCohortID);
+	    	sentCohort.setCohortID( 1L);
 		} else {
 			sentCohort.setCohortID(repo.findTopByOrderByCohortIDDesc().getCohortID() + 1);
 		}
