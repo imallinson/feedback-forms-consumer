@@ -1,6 +1,8 @@
 package com.qa.feedbackformscohorts.persistence.domain;
 
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class SentCohort {
 	
@@ -73,7 +75,7 @@ public class SentCohort {
 	}
 	
 	public String getCurrentDate() {
-		return  new Timestamp(System.currentTimeMillis()).toString().substring(0, 10);
+		return   LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 	}
 
 }
